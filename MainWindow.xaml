@@ -1,0 +1,26 @@
+﻿<Window x:Class="SoundMirrorer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoundMirrorer"
+        mc:Ignorable="d"
+        Title="SoundMirrorer" Height="314.095" Width="358.609" WindowStartupLocation="Manual" ResizeMode="CanMinimize">
+    <Grid>
+        <Label Content="To close this application, click on it's taskbar icon then click exit" HorizontalAlignment="Left" Margin="6,7,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="11"/>
+
+        <Label Content="Enable" HorizontalAlignment="Left" Margin="25,31,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="105"/>
+        <CheckBox x:Name="EnabledCheckBox" Content="" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" IsChecked="False" Checked="Enabled_Checked" Unchecked="Enabled_Unchecked"/>
+        
+        <Button Content="🛈" HorizontalAlignment="Left" Margin="310,60,0,0" VerticalAlignment="Top" Width="18" Height="20" FontSize="14" Click="Info_Click"/>
+
+        <Label Content="Mirror sound from:" HorizontalAlignment="Left" Margin="6,60,0,0" VerticalAlignment="Top" FontSize="12"/>
+        <ComboBox x:Name="SourceDevicesComboBox" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="318" SelectionChanged="SourceDevicesComboBox_SelectionChanged"/>
+
+        <Label Content="to:" HorizontalAlignment="Left" Margin="6,112,0,0" VerticalAlignment="Top" FontSize="12"/>
+        <ListBox x:Name="OutputDevicesList" HorizontalAlignment="Left" Height="100" Margin="10,136,0,0" VerticalAlignment="Top" Width="318"/>
+        <Button Content="Remove Device" HorizontalAlignment="Left" Margin="244,241,0,0" VerticalAlignment="Top" Width="84" FontSize="11" Height="22" Click="RemoveDevice_Click"/>
+        <Button Content="Add Device" HorizontalAlignment="Left" Margin="175,241,0,0" VerticalAlignment="Top" Width="64" FontSize="11" Height="22" Click="AddDevice_Click"/>
+        <ComboBox x:Name="OutputDevicesComboBox" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="318" Visibility="Hidden" DropDownClosed="OutputDevicesComboBox_DropDownClosed" IsMouseDirectlyOverChanged="OutputDevicesComboBox_MouseChanged" SelectionChanged="OutputDevicesComboBox_SelectionChanged"/>
+    </Grid>
+</Window>
