@@ -1,6 +1,7 @@
 ![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/main/ico-256.png)
 # SoundMirrorer
-SoundMirrorer is an application for windows that mirrors sound/audio from a playback device (headphones or speakers) to one or multiple playback devices (for Windows).
+SoundMirrorer is an application for windows that mirrors sound/audio from a playback device (headphones or speakers) to one or multiple playback devices;
+so if you want to use more than one speaker or pair of headphones, you can mirror the sound to them.
 
 ![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/main/screenshots/screenshot.jpg)
 
