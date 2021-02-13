@@ -1,7 +1,7 @@
 ![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/main/ico-256.png)
 # SoundMirrorer (for windows)
-Mirror sound/audio from a playback device (headphones or speakers) to one or multiple playback devices (for Windows)
-![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/main/Screenshots/sc1.jpg)
+Mirror sound/audio from a playback device (headphones or speakers) to one or multiple playback devices (for Windows).
+![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/main/screenshots/sc1.jpg)
 
 # Download
 Download [here](https://github.com/cyberrex5/SoundMirrorer/releases) and extract it wherever you want.
