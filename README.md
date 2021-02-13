@@ -10,4 +10,5 @@ If you have any issues try installing [the latest version of the .NET Framework]
 
 # Libraries used
 [NAudio](https://github.com/naudio/NAudio)
+
 [NotifyIcon](https://github.com/hardcodet/wpf-notifyicon)
