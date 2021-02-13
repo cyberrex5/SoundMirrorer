@@ -1,4 +1,4 @@
-#![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/master/icon.png) SoundMirrorer (for windows)
+#![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/master/ico-256.png) SoundMirrorer (for windows)
 Mirror sound/audio from a playback device (headphones or speakers) to one or multiple playback devices (for Windows)
 ![alt text](https://github.com/cyberrex5/SoundMirrorer/blob/master/Screenshots/sc1.jpg)
 
