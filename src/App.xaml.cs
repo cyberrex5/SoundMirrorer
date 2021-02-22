@@ -127,7 +127,7 @@ namespace SoundMirrorer
 
         public static void StartMirroring()
         {
-            Application.Current.MainWindow.IsEnabled = false;
+            if (Application.Current.MainWindow != null) Application.Current.MainWindow.IsEnabled = false;
 
             capture = new WasapiLoopbackCapture(_sourceDevice);
             foreach (MMDevice outputDevice in _outputDevices.Values)
@@ -147,12 +147,12 @@ namespace SoundMirrorer
             IsMirroring = true;
             ti.ToolTipText = $"SoundMirrorer (Mirroring from {_sourceDevice.FriendlyName})";
 
-            Application.Current.MainWindow.IsEnabled = true;
+            if (Application.Current.MainWindow != null) Application.Current.MainWindow.IsEnabled = true;
         }
 
         public static void StopMirroring()
         {
-            Application.Current.MainWindow.IsEnabled = false;
+            if (Application.Current.MainWindow != null) Application.Current.MainWindow.IsEnabled = false;
 
             capture.StopRecording();
             foreach (MirrorHandler mirror in mirrors)
@@ -167,7 +167,7 @@ namespace SoundMirrorer
             IsMirroring = false;
             ti.ToolTipText = "SoundMirrorer (Not Mirroring)";
 
-            Application.Current.MainWindow.IsEnabled = true;
+            if (Application.Current.MainWindow != null) Application.Current.MainWindow.IsEnabled = true;
         }
 
         private void tbShow_Click(object sender, RoutedEventArgs e)
@@ -186,6 +186,14 @@ namespace SoundMirrorer
                 StopMirroring();
             }
             Application.Current.Shutdown();
+        }
+
+        private void tbRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            if (!IsMirroring) return;
+
+            StopMirroring();
+            StartMirroring();
         }
     }
 }

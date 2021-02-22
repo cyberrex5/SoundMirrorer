@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using NAudio.CoreAudioApi;
 
 namespace SoundMirrorer
 {
