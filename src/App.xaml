@@ -12,13 +12,14 @@
 
             <tb:TaskbarIcon
                 x:Key="TaskbarIco"
-                IconSource="Icons\icon.ico"
+                IconSource="Icons/icon.ico"
                 Visibility="Visible"
                 ToolTipText="SoundMirrorer (Not Mirroring)"
                 MenuActivation="LeftOrRightClick">
                 <tb:TaskbarIcon.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="Show" Click="tbShow_Click"/>
+                        <MenuItem Header="Enable" Click="tbEnable_Click"/>
                         <MenuItem Header="Refresh" Click="tbRefresh_Click"/>
                         <MenuItem Header="Exit" Click="tbExit_Click"/>
                     </ContextMenu>

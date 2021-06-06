@@ -145,6 +145,7 @@ namespace SoundMirrorer
             capture.StartRecording();
 
             IsMirroring = true;
+            ((System.Windows.Controls.MenuItem)(ti.ContextMenu.Items[1])).Header = "Disable";
             ti.ToolTipText = $"SoundMirrorer (Mirroring from {_sourceDevice.FriendlyName})";
 
             if (Application.Current.MainWindow != null) Application.Current.MainWindow.IsEnabled = true;
@@ -165,6 +166,7 @@ namespace SoundMirrorer
             capture = null;
 
             IsMirroring = false;
+            ((System.Windows.Controls.MenuItem)(ti.ContextMenu.Items[1])).Header = "Enable";
             ti.ToolTipText = "SoundMirrorer (Not Mirroring)";
 
             if (Application.Current.MainWindow != null) Application.Current.MainWindow.IsEnabled = true;
@@ -186,6 +188,26 @@ namespace SoundMirrorer
                 StopMirroring();
             }
             Application.Current.Shutdown();
+        }
+
+        private void tbEnable_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsMirroring)
+            {
+                StopMirroring();
+            }
+            else
+            {
+                if (App.SourceDevice != null && App.OutputDevicesCount != 0)
+                {
+                    StartMirroring();
+                }
+                else
+                {
+                    MessageBox.Show("You have to select a Device to mirror sound from,\nand a Device to mirror sound to", "No Device Selected",
+                        MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.None, MessageBoxOptions.DefaultDesktopOnly);
+                }
+            }
         }
 
         private void tbRefresh_Click(object sender, RoutedEventArgs e)
