@@ -19,8 +19,8 @@ namespace SoundMirrorer
             {
                 throw new System.ArgumentNullException(nameof(captureRef), "Cannot be null.");
             }
-            this.OutputDevice = outputDevice;
-            this.capture = captureRef;
+            OutputDevice = outputDevice;
+            capture = captureRef;
         }
 
         public void StartMirroring()
@@ -52,8 +52,10 @@ namespace SoundMirrorer
 
             player.Stop();
 
-            bufferedWaveProvider = null;
+            player.Dispose();
             player = null;
+
+            bufferedWaveProvider = null;
 
             Debug.WriteLine("\nStopped mirroring audio\n");
             IsMirroring = false;

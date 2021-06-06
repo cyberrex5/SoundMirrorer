@@ -26,7 +26,7 @@ namespace SoundMirrorer
             if (App.SourceDevice == null || App.OutputDevicesCount == 0)
             {
                 EnabledCheckBox.IsChecked = false;
-                MessageBox.Show("You have to select a Device to mirror sound from,\nand a Device to mirror sound to", "No Device Selected", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxEx.Show(this, "You have to select a Device to mirror sound from,\nand a Device to mirror sound to", "No Device Selected", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -49,7 +49,7 @@ namespace SoundMirrorer
             if (App.IsOutputDevice(SourceDevicesComboBox.SelectedItem.ToString()))
             {
                 SourceDevicesComboBox.SelectedIndex = -1;
-                MessageBox.Show("Can't mirror sound to same device", "Device already selected", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxEx.Show(this, "Can't mirror sound to same device", "Device already selected", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace SoundMirrorer
 
             if (SourceDevicesComboBox.SelectedIndex != -1 && OutputDevicesComboBox.SelectedItem.ToString() == SourceDevicesComboBox.SelectedItem.ToString())
             {
-                MessageBox.Show("Can't mirror sound to same device", "Device already selected", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBoxEx.Show(this, "Can't mirror sound to same device", "Device already selected", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -110,9 +110,9 @@ namespace SoundMirrorer
 
         private void Info_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show
-            ("There will always be a slight delay for the devices your mirroring to.\nif it bothers you, you can change your playback device in windows to one you're not using and mirror that to the devices you want to use (this way, both the devices' sound will be slightly delayed)",
-            "Audio Delay", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBoxEx.Show(this,
+                "There will always be a slight delay for the devices your mirroring to.\nif it bothers you, you can change your playback device in windows to one you're not using and mirror that to the devices you want to use (this way, both the devices' sound will be slightly delayed)",
+                "Audio Delay", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         #endregion
