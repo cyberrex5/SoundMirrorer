@@ -5,22 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoundMirrorer"
         mc:Ignorable="d"
-        Title="SoundMirrorer" Height="314.095" Width="358.609" WindowStartupLocation="Manual" ResizeMode="CanMinimize">
+        Title="SoundMirrorer" MinHeight="236" MinWidth="344" Height="300" Width="350" WindowStartupLocation="Manual" ResizeMode="CanResize">
     <Grid>
-        <Label Content="To close this application, click on it's taskbar icon then click exit" HorizontalAlignment="Left" Margin="6,7,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="11"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="115*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition MinHeight="29" Height="70*"/>
+            <RowDefinition MinHeight="35" MaxHeight="40" Height="20*"/>
+        </Grid.RowDefinitions>
 
-        <Label Content="Enable" HorizontalAlignment="Left" Margin="25,31,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="105"/>
-        <CheckBox x:Name="EnabledCheckBox" Content="" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" IsChecked="False" Checked="Enabled_Checked" Unchecked="Enabled_Unchecked"/>
-        
-        <Button Content="🛈" HorizontalAlignment="Left" Margin="310,60,0,0" VerticalAlignment="Top" Width="18" Height="20" FontSize="14" Click="Info_Click"/>
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="6,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="To close this application, click on it's taskbar icon then click exit" FontStyle="Italic" FontSize="11" Height="25"/>
 
-        <Label Content="Mirror sound from:" HorizontalAlignment="Left" Margin="6,60,0,0" VerticalAlignment="Top" FontSize="12"/>
-        <ComboBox x:Name="SourceDevicesComboBox" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="318" SelectionChanged="SourceDevicesComboBox_SelectionChanged"/>
+        <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="25,0,10,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="Enable" FontSize="14" FontWeight="Bold" Height="25"/>
+        <CheckBox x:Name="EnabledCheckBox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="10,7" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="" IsChecked="False" Checked="Enabled_Checked" Unchecked="Enabled_Unchecked" Height="16"/>
 
-        <Label Content="to:" HorizontalAlignment="Left" Margin="6,112,0,0" VerticalAlignment="Top" FontSize="12"/>
-        <ListBox x:Name="OutputDevicesList" HorizontalAlignment="Left" Height="100" Margin="10,136,0,0" VerticalAlignment="Top" Width="318"/>
-        <Button Content="Remove Device" HorizontalAlignment="Left" Margin="244,241,0,0" VerticalAlignment="Top" Width="84" FontSize="11" Height="22" Click="RemoveDevice_Click"/>
-        <Button Content="Add Device" HorizontalAlignment="Left" Margin="175,241,0,0" VerticalAlignment="Top" Width="64" FontSize="11" Height="22" Click="AddDevice_Click"/>
-        <ComboBox x:Name="OutputDevicesComboBox" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="318" Visibility="Hidden" DropDownClosed="OutputDevicesComboBox_DropDownClosed" IsMouseDirectlyOverChanged="OutputDevicesComboBox_MouseChanged" SelectionChanged="OutputDevicesComboBox_SelectionChanged"/>
+        <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,0,10,5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="20" Height="20" Content="🛈" FontSize="14" Click="Info_Click"/>
+        <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Margin="10,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Mirror sound from:" FontSize="12" Height="26"/>
+
+        <ComboBox x:Name="SourceDevicesComboBox" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Margin="10,0,10,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="SourceDevicesComboBox_SelectionChanged"/>
+
+        <Label Content="to:" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Margin="10,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="12" Height="26"/>
+
+        <ListBox x:Name="OutputDevicesList" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Margin="10,0,10,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Button Content="Remove Device" Grid.Column="2" Grid.Row="6" Margin="5,5,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="11" Click="RemoveDevice_Click"/>
+        <Button Content="Add Device" Grid.Column="1" Grid.Row="6" Margin="5,5,5,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="11" Click="AddDevice_Click"/>
+        <ComboBox x:Name="OutputDevicesComboBox" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Margin="10,5,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Hidden" DropDownClosed="OutputDevicesComboBox_DropDownClosed" IsMouseDirectlyOverChanged="OutputDevicesComboBox_MouseChanged" SelectionChanged="OutputDevicesComboBox_SelectionChanged"/>
     </Grid>
 </Window>
